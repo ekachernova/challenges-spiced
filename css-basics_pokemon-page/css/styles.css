@@ -75,6 +75,15 @@ section {
 
 .subtitle {
   /* your solution */
+  border-bottom: gold 3px solid;
+  line-height: 1.9em;
+  display: inline-block;
+}
+
+.favourites > .subtitle {
+  border-bottom: orange 3px solid;
+  line-height: 1.9em;
+  display: inline-block;
 }
 
 /* ------- List ------- */
