@@ -94,3 +94,31 @@ h1 {
 .box--five img {
   width: 100%;
 }
+
+/*part 2*/
+@media screen and (min-width: 599px) {
+  .box--two {
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: 1199px) {
+  .box--two {
+    width: 400px;
+  }
+}
+
+/*part 3*/
+
+@media screen and (orientation: landscape) {
+  width: 250px;
+  height: 50px;
+}
+
+/*part 4*/
+
+@media (prefers-color-scheme: dark) {
+  .box--four {
+    background-color: hotpink;
+  }
+}
