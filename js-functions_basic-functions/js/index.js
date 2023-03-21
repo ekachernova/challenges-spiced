@@ -61,4 +61,8 @@ logBookData(bookAutor);
 logBookData(bookRating);
 logBookData(bookSales);
 
+bookSales += 1;
+logBookData(bookSales);
+bookSales += 1;
+logBookData(bookSales);
 // --^-- write your code here --^--
