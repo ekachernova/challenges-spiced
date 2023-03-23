@@ -1,6 +1,5 @@
 /*
 
-Important: Create a fork for each sub challenge!
 Implement the following functionality:
 
 1. On button click: The value of the first input field is copied into the second input field
@@ -14,3 +13,9 @@ Implement the following functionality:
 const firstInput = document.querySelector("[data-js=first-input]");
 const secondInput = document.querySelector("[data-js=second-input]");
 const button = document.querySelector("[data-js=button]");
+
+button.addEventListener("click", () => {
+  let dataFromFirstInput = firstInput.value;
+  firstInput.value = secondInput.value;
+  secondInput.value = dataFromFirstInput.toUpperCase();
+});
