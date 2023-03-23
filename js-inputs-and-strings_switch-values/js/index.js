@@ -24,3 +24,24 @@ uppercaseButton.addEventListener("click", () => {
 lowercaseButton.addEventListener("click", () => {
   firstInput.value = firstInput.value.toLowerCase();
 });
+
+const secondInput = document.querySelector('[data-js="second-input"]');
+const switchButton = document.querySelector('[data-js="switch-button"]');
+
+switchButton.addEventListener("click", () => {
+  if (firstInput.value === firstInput.value.toUpperCase()) {
+    firstInput.value = firstInput.value.toLowerCase();
+  } else {
+    firstInput.value = firstInput.value.toUpperCase();
+  }
+  console.log(firstInput.value);
+});
+
+switchButton.addEventListener("click", () => {
+  if (secondInput.value === secondInput.value.toUpperCase()) {
+    secondInput.value = secondInput.value.toLowerCase();
+  } else {
+    secondInput.value = secondInput.value.toUpperCase();
+  }
+  console.log(secondInput.value);
+});
