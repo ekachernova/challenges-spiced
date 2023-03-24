@@ -41,7 +41,10 @@ footer.append(userName);
 let button = document.createElement("button");
 button.classList.add("post__button");
 button.setAttribute("type", "button");
+button.setAttribute("data-js", "like-button");
 button.innerText = "♥ Like";
 footer.append(button);
+
+button.addEventListener("click", handleLikeButtonClick);
 
 document.body.append(newArticle);
