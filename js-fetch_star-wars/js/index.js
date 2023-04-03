@@ -41,6 +41,26 @@ fetchDataAndRender();
 
 // --v-- your code below this line --v--
 
-function fetchDataAndRender() {
-  fetch(); // ?
+async function fetchDataAndRender() {
+  const url = "https://swapi.dev/api/people";
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      console.log("something went wrong");
+    } else {
+      const data = await response.json();
+      console.log(data);
+      // render data
+      data.results.forEach((data) => {
+        renderElement(Card(data));
+      });
+      console.log(data.results[3]);
+
+      // return data in order to use it outside of try sector
+      return data;
+    }
+  } catch (e) {
+    console.error(e);
+  }
 }
+fetchDataAndRender();
