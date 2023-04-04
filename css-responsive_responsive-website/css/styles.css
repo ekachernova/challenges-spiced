@@ -244,6 +244,7 @@ width, etc. */
 
 /* Media Query Tablet */
 /* --- */
+
 @media screen and (min-width: 900px) {
   .card-section {
     justify-content: space-around;
@@ -265,3 +266,5 @@ width, etc. */
     font-size: 20px;
   }
 }
+
+
