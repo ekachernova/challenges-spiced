@@ -1,14 +1,19 @@
 console.clear();
 
+// export const {value1} = myObject;
+
 // EXERCISE 1
 // Extract only the course name from the company object.
 // Make sure to export your variable as in the example below to make the tests work.
 
-const company = {
-  name: "neuefische",
-  course: "Web Development",
-  location: "Hamburg",
-};
+// const company = {
+//   name: "neuefische",
+//   course: "Web Development",
+//   location: "Hamburg",
+// };
+// const {name,course,location} = company;
+// console.log(company.name)
+
 
 // example: export const {value1} = myObject;
 
