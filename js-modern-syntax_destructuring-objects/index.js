@@ -11,10 +11,8 @@ console.clear();
 //   course: "Web Development",
 //   location: "Hamburg",
 // };
-// const {name,course,location} = company;
-// console.log(company.name)
-
-
+// export const { name } = company;
+// console.log({name});
 // example: export const {value1} = myObject;
 
 // EXERCISE 2
@@ -25,6 +23,10 @@ console.clear();
 //  2.3: 'isAdmin' property into the variable 'isAdmin' (false, if no such property exists)
 
 const user = { name: "John", years: 30 };
+const { name, years: age, isAdmin = false} = user;
+console.log(name,age,isAdmin);
+console.log(user);
+
 
 // EXERCISE 3
 // Extract the variables from the dog object and
@@ -36,6 +38,10 @@ const dog = {
   age: 5,
 };
 
+const {name: dogName,breed: dogBreed,age: dogAge} = dog
+console.log(dogName,dogBreed,dogAge);
+// console.log(dog);
+
 // EXERCISE 4
 // Extract the 'lastName' property from the person object as "personLastName".
 // Store all other properties in an object called "moreInformation".
@@ -45,15 +51,8 @@ const person = {
   age: 24,
   firstName: "Alex",
 };
+const {lastName: personLastName, ...moreInformation} = person
+console.log(person);
 
-/**In this Codesandbox, you will destructure objects.
 
 
-## Hints
-
-- Use the variable names given in the task to destructure the given object.
-- The value can correspond to a simple data type as well as to an object.
-- Make sure to export the variable you have declared in order to make the tests work.
-- If you want to check whether you solved the tasks correctly, open the "Tests" tab of Codesandbox.
-
- */
