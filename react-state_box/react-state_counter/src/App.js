@@ -1,8 +1,23 @@
 import React from "react";
 import "./styles.css";
+import { useState } from "react";
 
 export default function App() {
-  let count = 0;
+  // let count = 0;
+  const  [count,setCount] = useState(0)
+
+  function handleClickMinus() {
+    console.log("clicked on -");
+    setCount(count-1)
+    
+
+  }
+
+  function handleClickPlus() {
+    console.log("clicked on +");
+    setCount(count+1)
+
+  }
 
   return (
     <div className="container">
@@ -10,17 +25,13 @@ export default function App() {
       <div className="button-container">
         <button
           type="button"
-          onClick={() => {
-            console.log("🤔");
-          }}
+          onClick={handleClickMinus}
         >
           -
         </button>
         <button
           type="button"
-          onClick={() => {
-            console.log("🤔");
-          }}
+          onClick={handleClickPlus}
         >
           +
         </button>
@@ -28,3 +39,4 @@ export default function App() {
     </div>
   );
 }
+
