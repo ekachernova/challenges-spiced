@@ -15,4 +15,6 @@ function Card({ user }) {
   );
 }
 
+
+
 export default Card;
