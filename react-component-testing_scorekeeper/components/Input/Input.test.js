@@ -10,4 +10,15 @@ test("renders a label and an input with the correct attributes", () => {
   expect(inputToCheck).toHaveAttribute("placeholder", "placeholder");
 });
 
-test("calls callback on every user input", async () => {});
+test("calls callback on every user input", async () => {
+  const handleInput = jest.fn();
+  const user = userEvent.setup();
+
+  render(<Input onChange={handleInput} labelText="Name" name="name" />);
+
+  const input = screen.getByLabelText("Name");
+
+  await user.type(input, "Let's check it");
+
+  expect(handleInput).toHaveBeenCalledTimes(14);
+});
