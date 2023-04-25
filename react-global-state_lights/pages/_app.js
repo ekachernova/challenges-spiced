@@ -46,26 +46,29 @@ const initialLights = [
 ];
 
 export default function App({ Component, pageProps }) {
-  const [allLights, setAllLights] = useState([...initialLights]);
-  // const [isOn, setIsOn] = useState(false);
-  // function handleToggle() {
-  //   const isOnLights = allLights.map((light) => (
-  //     light.isOn
-  //   ))
-  //   setIsOn((light.isOn) => !light.isOn)
-  // }
-  function handleAllLIghts(id, isOn) {
-    setAllLights(
-      allLights.map((light) =>
+  const [lights, setLights] = useState([...initialLights]);
+
+  function toggleLight(id, isOn) {
+    setLights(
+      lights.map((light) =>
         light.id === id ? { ...light, isOn: !isOn } : light
       )
     );
   }
 
+  const lengthOfAllLights = lights.filter(
+    (light) => light.isOn === true
+  ).length;
+  const isDimmed = lengthOfAllLights === 0;
   return (
-    <Layout>
+    <Layout isDimmed={isDimmed}>
       <GlobalStyle />
-      <Component {...pageProps} />
+      <Component
+        {...pageProps}
+        lights={lights}
+        toggleLight={toggleLight}
+        setLights={setLights}
+      />
     </Layout>
   );
 }

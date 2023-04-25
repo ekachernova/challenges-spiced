@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { LightButton, Icon, Text, Name, State } from "./Light.styled";
 
-export default function Light({ light, handleAllLights }) {
+export default function Light({ light, toggleLight }) {
   const [isOn, setIsOn] = useState(false);
 
   function handleToggle() {
@@ -12,14 +12,14 @@ export default function Light({ light, handleAllLights }) {
     <LightButton
       type="button"
       onClick={() => {
-        handleAllLights(light.id, light.isOn);
+        toggleLight(light.id, light.isOn);
       }}
-      isOn={isOn}
+      isOn={light.isOn}
     >
-      <Icon isOn={isOn}>💡</Icon>
+      <Icon isOn={light.isOn}>💡</Icon>
       <Text>
-        <Name>{name}</Name>
-        <State>{isOn ? "On" : "Off"}</State>
+        <Name>{light.name}</Name>
+        <State>{light.isOn ? "On" : "Off"}</State>
       </Text>
     </LightButton>
   );
