@@ -1,8 +1,8 @@
 import Link from "../components/Link";
+import { useLightsStore } from "../stores/lightsStorage";
 
 export default function HomePage({ lights }) {
-  const lengthLightsOn = lights.filter((light) => light.isOn).length;
-  console.log("length", lengthLightsOn);
+  const lengthLightsOn = useLightsStore((state) => state.numberOfLights());
 
   return (
     <div>
