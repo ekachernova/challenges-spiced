@@ -7,7 +7,7 @@ const URL = "https://api.wheretheiss.at/v1/satellites/25544";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function ISSTracker() {
-  const { data, isLoading } = useSWR(URL, fetcher);
+  const { data, isLoading } = useSWR(URL, fetcher, { refreshInterval: 5000 });
 
   console.log("swr data", data);
 
