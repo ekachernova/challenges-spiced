@@ -1,5 +1,9 @@
 import { MapContainer, MapImage, MapISS } from "./Map.styled";
 
+/**
+ * Note: `SWR` needs you to destructure a `data` object, but the `Map` and `Controls` component need `longitude` and `latitude` as separate props; how can you simply pass the coordinates from `data` without changing the `Map/index.js` and `Controls/index.js` files? (Hint: there are several ways to do this!)
+ */
+
 export default function Map({ longitude, latitude }) {
   const [x, y] = positionToMapCoordinates(longitude, latitude);
 
