@@ -1,3 +1,7 @@
-// import { server } from "./server.js";
+import { server } from "./server.js";
 
-// server.listen(…
+const port = 7999;
+server.listen(port, () => {
+  console.log(`Server running at http://127.0.0.1:${port}/`);
+  console.log("hi");
+});
