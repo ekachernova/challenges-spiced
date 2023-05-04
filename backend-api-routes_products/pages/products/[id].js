@@ -6,6 +6,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 export default function ProductPage() {
   const router = useRouter();
   const { id } = router.query;
+
   console.log(id);
 
   const { data } = useSWR(`/api/products/${id}`, fetcher);
